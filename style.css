@@ -1,0 +1,137 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calculator {
+            background: rgba(40, 40, 50, 0.85);
+            border-radius: 25px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 32px 28px 28px 28px;
+            width: 350px;
+            max-width: 95vw;
+            transition: box-shadow 0.3s;
+        }
+
+        .calculator:hover {
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+        }
+
+        .display {
+            background: linear-gradient(90deg, #232526 0%, #3a3a3a 100%);
+            padding: 24px 18px;
+            text-align: right;
+            border-radius: 15px;
+            font-size: 2.2rem;
+            color: #f5f5f5;
+            margin-bottom: 28px;
+            height: 70px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+        }
+
+        .display input {
+            width: 100%;
+            border: none;
+            background: transparent;
+            color: #f5f5f5;
+            font-size: 2.5rem;
+            text-align: right;
+            outline: none;
+            letter-spacing: 1px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .button {
+            background: linear-gradient(145deg, #444 40%, #222 100%);
+            color: #fff;
+            border: none;
+            padding: 22px 0;
+            font-size: 1.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.12s, box-shadow 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            font-weight: 500;
+            position: relative;
+        }
+
+        .button:hover {
+            background: linear-gradient(145deg, #666 40%, #333 100%);
+            transform: translateY(-2px) scale(1.07);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+            z-index: 2;
+        }
+
+        .button:active {
+            background: linear-gradient(145deg, #888 40%, #444 100%);
+            transform: scale(0.98);
+        }
+
+        .button.operator {
+            background: linear-gradient(145deg, #ffb347 40%, #ffcc33 100%);
+            color: #232526;
+            font-weight: 700;
+            box-shadow: 0 2px 12px rgba(255, 196, 0, 0.13);
+        }
+
+        .button.operator:hover {
+            background: linear-gradient(145deg, #ffd580 40%, #ffb347 100%);
+        }
+
+        .button.zero {
+            grid-column: span 2;
+        }
+
+        /* Adding Scientific Functions */
+        .buttons-scientific {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .button.scientific {
+            background: linear-gradient(145deg, #555 40%, #333 100%);
+            color: #fff;
+        }
+
+        .button.scientific:hover {
+            background: linear-gradient(145deg, #777 40%, #555 100%);
+        }
+
+        .button:focus {
+            outline: 2px solid #ffb347;
+        }
+
+        /* Glassmorphism border effect */
+        .calculator::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 25px;
+            pointer-events: none;
+            border: 2px solid rgba(255,255,255,0.08);
+        }
